@@ -14,6 +14,7 @@ public:
 // -- Functions -- 
     
     Vec3 vec_add(Vec3& v, Vec3& u);
+    Vec3 vec_sub(Vec3& v, Vec3& u);
 
 // -- Operator Overloads -- 
     

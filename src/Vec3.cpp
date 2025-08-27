@@ -12,6 +12,10 @@ Vec3 Vec3::vec_add(Vec3& v, Vec3& u){
     return Vec3(v.x+u.x, v.y+u.y);
 }
 
+Vec3 Vec3::vec_sub(Vec3& v, Vec3& u){
+    return Vec3(v.x-u.x, v.y-u.y);
+}
+
 // -- Overloaded Operators --
 float Vec3::operator[](int i){
     return ((&x)[i]);
