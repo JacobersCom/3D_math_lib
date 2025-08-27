@@ -16,6 +16,10 @@ Vec3 Vec3::vec_sub(Vec3& v, Vec3& u){
     return Vec3(v.x-u.x, v.y-u.y);
 }
 
+float Vec3::Magnitude(Vec3& v){
+    return sqrt(((v.x*v.x)+(v.y*v.y)));
+}
+
 // -- Overloaded Operators --
 float Vec3::operator[](int i){
     return ((&x)[i]);
