@@ -1,6 +1,7 @@
 #include <Vec3.h>
 #include <iostream>
 
+//Always make sure you're in Dev branch before coding
 
 int main(){
     Vec3 vector(2.0f, 2.0f);
