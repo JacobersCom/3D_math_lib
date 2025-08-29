@@ -1,12 +1,13 @@
 
-cmake_minimum_required(VERSION 4.0.3)
+cmake_minimum_required(VERSION 3.20)
 
 project(3D_math_lib LANGUAGES CXX)
 
-add_library(3D_math_lib INTERFACE)
 
-target_include_directories(3D_math_lib INTERFACE includes)
+add_library(3D_math STATIC 
+    src/Vec3.cpp)
 
-target_compile_features(3D_math_lib INTERFACE)
+target_include_directories(3D_math PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
 
-target_compile_options(3D_math_lib INTERFACE -Wall -Wextra -Wpedantic)
+enable_testing()
+add_subdirectory(math_test)

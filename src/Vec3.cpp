@@ -24,6 +24,10 @@ float Vec3::dist(Vec3& v, Vec3& u){
     return ((sqrt(((v.x*v.x) + (v.y*v.y)))) - (sqrt(((u.x*u.x)+(u.y*u.y))))); 
 }
 
+Vec3 Vec3::normal(Vec3& v){
+    return v / Magnitude(v);
+}
+
 // -- Overloaded Operators --
 float Vec3::operator[](int i){
     return ((&x)[i]);
@@ -36,13 +40,21 @@ const float Vec3::operator[](int i) const{
 inline Vec3& Vec3::operator+=(Vec3& v){
     x += v.x;
     y += v.y;
+    return *this;
 }
 
 inline Vec3& Vec3::operator-=(Vec3& v){
     x -= v.x;
     y -= v.y;
+    return *this;
 }
 
-inline std::ostream& operator<<(std::ostream& os, Vec3& v){
+inline Vec3 &operator/(Vec3 &v, float s)
+{
+    return v/s;
+}
+
+inline std::ostream &operator<<(std::ostream &os, Vec3 &v)
+{
     os << v.x << "," << v.y << std::endl;
 }
